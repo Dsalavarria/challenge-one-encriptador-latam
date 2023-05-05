@@ -44,8 +44,14 @@ function btnDesencriptar()
 }
 function btncopiar()
 {
-  var textcopiado =document.getElementById(mensaje.value)
-  textcopiado.select()
-  document.axecCoommand('copy')
-  alert("texto copiado");
+    var textcopiado =document.querySelector(".mensaje");
+    textcopiado.select()
+    var s=document.execCommand('copy')
+    if(s)
+    {   mensaje.value="";
+        alert("texto copiado");
+    }
+    
+    else
+    alert("no se pudo copiar el texto")
 }
